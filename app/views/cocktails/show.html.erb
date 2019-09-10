@@ -1,0 +1,23 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+<h2><%= @cocktail.name %></h2>
+
+<h3>Ingredients</h3>
+<ul style="list-style-type: none;">
+    <li>
+      <% @cocktail.doses.each do |dose| %>
+      <p><%= dose.ingredient.name %>
+      (<%= dose.description %>)
+      | <%= link_to 'Delete dose', cocktail_dose_path(dose), method: :delete %></p>
+      <% end %>
+      <br>
+    </li>
+</ul>
+  <%= link_to 'Edit cocktail', new_cocktail_dose_path(@cocktail), class: 'btn-add' %>
+
+
+<%= link_to 'Go back', cocktails_path, class: 'btn-add' %>
+
+</body>

@@ -1,0 +1,18 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Add a new Cocktail</h1>
+
+<h3>Enter the cocktail informations</h3>
+  <div class="form">
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :ingredients %>
+      <%= f.submit class: 'btn-add' %>
+    <% end %>
+
+  </div>
+<br>
+<%= link_to 'Go back', cocktails_path, class: 'btn-add' %>
+</body>

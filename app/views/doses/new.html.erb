@@ -1,0 +1,17 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+<h2>Edit Cocktail</h2>
+  <div class="form">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient %>
+      <%= f.text_area :description %>
+      <br>
+      <%= f.submit class: 'btn-add'%>
+    <% end %>
+    <br>
+    <%= link_to 'Go back', @cocktail, class: 'btn-add' %>
+  </div>
+
+</body>

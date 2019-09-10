@@ -1,0 +1,27 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Stan's Bar</h1>
+  <h2>Cocktails list</h2>
+      <div class="flip-cards">
+        <% @cocktails.each do |cocktail| %>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3> <%= cocktail.name %></h3>
+              <img src="" alt="">
+            </div>
+            <div class="flip-card-back">
+              <h3><%= cocktail.name %></h3>
+              <%= link_to 'See cocktail', cocktail %>
+              <br>
+              <%= link_to 'Delete cocktail', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' }%>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <br>
+  <span><%= link_to 'Add a cocktail', new_cocktail_path, class: 'btn-add'%></span>
+</body>

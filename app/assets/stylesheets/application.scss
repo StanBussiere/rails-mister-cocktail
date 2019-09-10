@@ -1,0 +1,112 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+body {
+  background-color: #101935;
+  color: #F2FDFF;
+  text-align: center;
+  align: center;
+  // font-family: 'Lobster', cursive;
+  font-family: 'courier new';
+  text-decoration: none;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+h1{
+  font-size: 56px;
+}
+
+h1, h2, h3 {
+  font-family: 'Lobster', cursive;
+  // font-family: 'courier new';
+  font-weight: bold;
+}
+
+.flip-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  margin: 5px;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: #F2FDFF;
+  width: 320px;
+  height: 240px;
+  border-radius: 8px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  .flip-card-back {
+    backface-visibility: visible;
+  }
+}
+
+.flip-card-front {
+  background-image: url('gin-tonic.jpg');
+    // background-color: #DBCBD8;
+    z-index: 100;
+}
+
+.flip-card-back {
+  background-color: #9AD4D6;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+}
+
+// .flip-card:hover {
+//   opacity: 0.8;
+//   transition: 0.2s;
+// }
+
+.btn-add {
+  width: auto;
+  padding: 15px 10px;
+  background-color: #9AD4D6;
+  border-radius: 5px;
+  color: #101935;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-add:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.form {
+width: 400px;
+margin: auto;
+}
